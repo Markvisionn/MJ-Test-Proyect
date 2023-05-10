@@ -13,11 +13,17 @@ state="idle"; //state para script fightrhythmanimate
 bits=5;
 bits2=2;
 bitcount=0;
+xi=x;
+yi=y;
 
 
 // path sets
+point_to_go=0;
+on_point=false;
+move_on_path = false;
+current_beat=0;
 current_path = 0;
-current_path_name="";
+//current_path_name="";
 spd = 16;
 endaction =	0;
 absolute = 0;

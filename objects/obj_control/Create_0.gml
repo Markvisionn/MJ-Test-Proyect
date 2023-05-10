@@ -8,8 +8,8 @@ global.DrawText=false;
 room_goto(ROOM_START);
 
 //salas
-current_room=0;
-room_count=3
+global.currentroom=0;
+room_count=3; //cambiar a lenght(room_data)
 
 //Room data rooms index in Macros (enum) 
 //room_data=[room_name, Music, BPM, obj_to_follow, room_mode,mainChar]

@@ -4,7 +4,7 @@ function FightRhythmAnimate(){
 
 	//animate thru rhythm
 if (state == "idle"){
-	image_index=(obj_Beat.SumDelta/obj_Beat.BeatTimeMS)*(image_number-1)
+	image_index=(global.beatprogress)*(image_number-1)
 }
 if (state=="attack")
 {

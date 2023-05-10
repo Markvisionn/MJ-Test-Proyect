@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "TileSets",
-    "path": "folders/TileSets.yy",
+    "name": "TileSets Ale",
+    "path": "folders/TileSets/TileSets Ale.yy",
   },
   "spriteId": {
     "name": "spr_ts_Ale",

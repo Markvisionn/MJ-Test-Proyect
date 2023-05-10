@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "TileSets",
-    "path": "folders/TileSets.yy",
+    "name": "FreeTest Tilesets",
+    "path": "folders/TileSets/FreeTest Tilesets.yy",
   },
   "spriteId": {
     "name": "spr_tsTestForestStatic",

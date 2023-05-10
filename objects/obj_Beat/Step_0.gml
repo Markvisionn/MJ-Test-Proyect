@@ -1,4 +1,4 @@
-	/// @description Inserte aquí la descripción
+/// @description Inserte aquí la descripción
 // Puede escribir su código en este editor
 
 //Activar obstáculos Obstacle1 
@@ -19,24 +19,30 @@ scr_CountingHand();
 	SumDelta+=dt;
 	SumFullDelta+=dt;
 
-	if (SumDelta>=BeatTimeMS) {
-		global.beat=true;
-		SumDelta -= BeatTimeMS
-		audio_play_sound(Beep,11,false)
-		with(instance_create_layer(x, y,"Instances",obj_vanish_GUI))
+	if (SumDelta>=BeatTimeMS) 
+	{
+	global.beat=true;
+	SumDelta -= BeatTimeMS;
+	global.BeatNumber+=1;
+	audio_play_sound(Beep,11,false);
+	var _barra=instance_create_layer(x, y,"Instances",obj_vanish_GUI);
+	with(_barra)
 		{
 			sprite_index=img_BeatMeter;
 		}
-		} else global.beat=false;
+	} else global.beat=false;
 
-	//beat meter
-	BeatProgress = sin((SumFullDelta/BeatTimeMS)*pi)
-	if (abs(BeatProgress)<=beathitrange) global.beatchance =true else global.beatchance =false
+//beat progress from 0 to 1
+	global.beatprogress=min(SumDelta/BeatTimeMS,1);
 
-	var char = obj_control.room_data[obj_control.current_room][index.mainchar];
+//beat meter
+	BeatBarProgress = sin((SumFullDelta/BeatTimeMS)*pi)
+	if (abs(BeatBarProgress)<=beathitrange) global.beatchance =true else global.beatchance =false
+
+	var char = obj_control.room_data[global.currentroom][index.mainchar];
 
 //draw vanishing BeatBar
-	if (char.InputMagnitude and obj_control.room_data[obj_control.current_room][index.mode]!=mode.move)
+	if (char.InputMagnitude and obj_control.room_data[global.currentroom][index.mode]!=mode.move)
 	{
 		with(instance_create_layer(x, y,"Instances",obj_vanish_GUI))
 		{
@@ -44,7 +50,7 @@ scr_CountingHand();
 		}
 	}
 	
-		if (keyboard_check_pressed(ord("A")) and obj_control.room_data[obj_control.current_room][index.mode]==mode.move)
+		if (keyboard_check_pressed(ord("A")) and obj_control.room_data[global.currentroom][index.mode]==mode.move)
 	{
 		with(instance_create_layer(x, y,"Instances",obj_vanish_GUI))
 		{

@@ -11,14 +11,13 @@ if keyboard_check_released(vk_insert){
 
 if changeroom {
 	audio_stop_all();
-    current_room += 1;
-    if (current_room > room_count - 1)
+    global.currentroom += 1;
+    if (global.currentroom > room_count - 1)
     {
-        current_room = 0;
+        global.currentroom = 0;
     }
-    room_goto(room_data[current_room][index.name]);
-	
-}
+    room_goto(room_data[global.currentroom][index.name]);
+	}
 
 if muteall{
 	if (mute) mute=0 else mute=1; 
