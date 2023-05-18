@@ -19,6 +19,8 @@ if (global.DrawText){
 	draw_text(_x-16,_y+128+32,"yi: "+string(yi));
 	draw_text(_x-16,_y+128+32+16,"xto: "+string(_xTo));
 	draw_text(_x-16,_y+128+64,"yto: "+string(_yTo));
+	draw_set_color(c_black);
 	draw_text(_x-16,_y+128+64+16,"stance: "+string(stance));
+	draw_text(_x-16,_y+128+64+32,"point: "+string(point_to_go));
 
 }

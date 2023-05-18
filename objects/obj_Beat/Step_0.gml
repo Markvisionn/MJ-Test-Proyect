@@ -4,7 +4,16 @@
 //Activar obstáculos Obstacle1 
 	MoveKey=keyboard_check_pressed(vk_control);
 
-
+	var sKey=keyboard_check_pressed(ord("S"));
+	if sKey
+	{
+		audio_play_sound(Beep,100,0,1,0,3)
+		var _barra=instance_create_layer(x, y,"Instances",obj_vanish_GUI);
+		with(_barra)
+			{
+				sprite_index=img_BeatMeter;
+			}
+	}
 //start movement's obstacles
 if(MoveKey)
 {

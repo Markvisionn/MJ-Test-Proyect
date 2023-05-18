@@ -19,5 +19,5 @@ function scr_ataque1() {
 		current_path=pth_UL1;
 		break;
 	}
-
+	point_to_go=0;
 }

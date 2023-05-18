@@ -1,6 +1,7 @@
 /// @description
 FightRhythmAnimate();
 
+
 if ( stance ==  EnemyStance.prepare)
 {
 	if (current_beat != global.BeatNumber)
@@ -24,7 +25,7 @@ if ( stance ==  EnemyStance.prepare)
 if (stance ==  EnemyStance.wait)
 {
 	if (global.beat=true) bitcount++;
-	if (bits==bitcount)
+	if (bitcount==bits)
 	{
 		 bitcount=0;
 		 stance=  EnemyStance.prepare;
@@ -35,15 +36,19 @@ if (stance ==  EnemyStance.attack)
 {
 	global.enemy_atk = 1;
 	global.enemy_hit = 0;
-	if (global.beat=true) bitcount++;
-	if (bits2==bitcount){
-		bitcount=0;
-		stance= EnemyStance.attack
-		scr_ataque12();
+	if (!attacking)
+	{
+		if (global.beat=true) bitcount++;
+		if (bitcount=bits2)
+		{
+			bitcount=0;
+			scr_ataque1p2();
+			attacking= true;
+		}
+	}
+	if (attacking) scr_FightEnemyMove();
 }
-	
-}
-if (stance== EnemyStance.endstance && StartEndState=true && position=1)
+if (stance== EnemyStance.endstance && StartEndState=true)
 {
 	alarm[0]=room_speed*attack_delay;
 	StartEndState=false;

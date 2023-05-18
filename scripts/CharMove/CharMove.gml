@@ -1,7 +1,5 @@
 function CharMove() {
 	// Movimiento y Sprite
-
-
 	// indicadores de movimiento
 	// se usan en player collision
 	hSpeed = lengthdir_x(InputMagnitude * walk_speed, InputDirection);

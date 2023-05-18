@@ -11,5 +11,5 @@ current_music = obj_control.room_data[global.currentroom][index.music];
 current_bpm = obj_control.room_data[global.currentroom][index.bpm];
 bpm=current_bpm;
 BeatTimeMS=((60)/bpm)*1000000
-audio_play_sound(current_music, 10, true);
+audio_play_sound(current_music, 10, true,0.5);
 

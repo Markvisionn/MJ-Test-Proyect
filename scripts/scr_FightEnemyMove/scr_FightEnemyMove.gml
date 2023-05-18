@@ -20,27 +20,37 @@ var _BPM,_time,_speed,_direction;
 _BPM = obj_Beat.current_bpm;
 _time = ((60/_BPM)*room_speed);
 _speed = (_distance/_time)*2;//twice of speed
-_direction= point_direction(xi,yi,_xTo,_yTo);
+_direction= point_direction(x,y,_xTo,_yTo);
 
 
 if(_actualdistance<=_speed)
 {
-	//match speed to distance remaining
-	_speed=_actualdistance;			
+	x=_xTo;
+	y=_yTo;
+}else
+{
+	x+=lengthdir_x(_speed,_direction);
+	y+=lengthdir_y(_speed,_direction);
+	
 }
 
-x+=lengthdir_x(_speed,_direction);
-y+=lengthdir_y(_speed,_direction);
 
+_actualdistance=point_distance(x,y,_xTo,_yTo);
 
-if(_actualdistance==0)
+if(_actualdistance==0||_distance==0)
 {
-	breakpoint=14
 	//if reached the last point, attack stance
 	var _numpoints=path_get_number(current_path)-1;
 	if(point_to_go==_numpoints)
 	{
-		stance=EnemyStance.attack;
+		if(stance=EnemyStance.attack)
+		{
+			attacking=false;
+			stance=EnemyStance.endstance;
+			StartEndState=true;
+		}		
+		if(stance=EnemyStance.prepare) stance=EnemyStance.attack;
+
 	} else
 	{
 		xi=x;
@@ -49,4 +59,6 @@ if(_actualdistance==0)
 		return true;
 	}
 }else return false;
+
 }
+

@@ -6,3 +6,4 @@ y = ystart;
 global.enemy_atk = false;
 global.enemy_hit = true;
 stance = EnemyStance.wait;
+bitcount=0;
