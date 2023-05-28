@@ -4,9 +4,10 @@ StartEndState=false;
 image_speed = 0;
 global.enemy_hit = true;
 global.enemy_atk = false;
-global.enemy_damage = 31;
 time_attack = round(random_range(3,4));
 attack_delay=0.5; //seconds to wait to start counting to attack
+hurt_delay=0.4;
+collided=false;
 
 stance = EnemyStance.wait;
 state="idle"; //state para script fightrhythmanimate
@@ -16,6 +17,10 @@ bitcount=0;
 xi=x;
 yi=y;
 
+//Stats
+maxhp=100;
+hp=100;
+DMG = 31;
 
 // path sets
 point_to_go=0;

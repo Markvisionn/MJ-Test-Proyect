@@ -3,7 +3,7 @@
 
 x_to=x;
 y_to=y;
-attack_distance=272;
+attack_distance=350;
 move=true;
 hit_delay=0.8;
 attack_delay=0.3;
@@ -20,6 +20,7 @@ image_index=0;
 
 hp=100;
 hpmax=hp;
+DMG=15;
 hpbar_width = 200;
 hpbar_height = 24;
 hpbar_x = 64;
@@ -33,3 +34,4 @@ spr_atk3=spr_CondeATK3;
 spr_dead=spr_CondeDead;
 spr_hurt=spr_CondeHurt;
 
+debugswitch=true;

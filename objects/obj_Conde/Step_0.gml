@@ -18,6 +18,7 @@
 
 	if (state="idle" && global.beatchance){
 		if(Izquierda+Arriba+Abajo==1 && Derecha==0){
+					
 			if Izquierda x_to=x-dodge_distance;
 			if Arriba y_to=y-dodge_distance;
 			if Abajo y_to=y+dodge_distance;
@@ -45,11 +46,18 @@
 		start_delay=false;
 		alarm[0]=room_speed*delay
 	}
-	if (state=="attack"){
+	if (state=="attack")
+	{
 		x+=min(abs(x_to-x),dodge_speed)*sign(x_to-x);
 		if (sign(x_to-x)==0 and image_speed=0){
 			delay=attack_delay
 			start_delay=true;
 			state="delay";
 		}
+	}
+	if (state=="hit")
+	{
+		sprite_index=spr_hurt;
+		image_speed=1;
+		alarm[0]=room_speed*hit_delay;
 	}

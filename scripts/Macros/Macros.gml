@@ -10,6 +10,7 @@ enum EnemyStance{
 	prepare,
 	attack,
 	wait,
+	hit,
 	endstance
 }
 

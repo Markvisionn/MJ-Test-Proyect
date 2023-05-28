@@ -1,6 +1,6 @@
 /// @description
 FightRhythmAnimate();
-
+if(keyboard_check_pressed(ord("D"))) perreo=10;
 
 if ( stance ==  EnemyStance.prepare)
 {
@@ -20,7 +20,6 @@ if ( stance ==  EnemyStance.prepare)
 	}
 	}
 }
-
 //idle state, wait for for certain beats to start attack
 if (stance ==  EnemyStance.wait)
 {
@@ -34,8 +33,12 @@ if (stance ==  EnemyStance.wait)
 }
 if (stance ==  EnemyStance.attack)
 {
-	global.enemy_atk = 1;
-	global.enemy_hit = 0;
+	if (!collided)
+	{
+		global.enemy_atk = true;
+		global.enemy_hit = false;
+	}
+	
 	if (!attacking)
 	{
 		if (global.beat=true) bitcount++;
@@ -52,4 +55,8 @@ if (stance== EnemyStance.endstance && StartEndState=true)
 {
 	alarm[0]=room_speed*attack_delay;
 	StartEndState=false;
+}
+if (stance == EnemyStance.hit)
+{
+	alarm[0]=room_speed*hurt_delay;
 }

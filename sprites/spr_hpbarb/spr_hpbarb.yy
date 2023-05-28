@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "Fight",
-    "path": "folders/Sprites/Fight.yy",
+    "name": "GUI",
+    "path": "folders/Sprites/Fight/GUI.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
